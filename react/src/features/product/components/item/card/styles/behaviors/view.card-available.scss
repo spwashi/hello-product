@@ -1,0 +1,26 @@
+.product-body:not(.wasSold) {
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: green;
+    opacity: .2;
+    height: 100%;
+    width: 100%;
+    content: '';
+    pointer-events: none;
+  }
+
+  &:after {
+    pointer-events: none;
+    content: 'Available!';
+    transform: rotate(-30deg);
+    font-weight: bold;
+    font-size: 3rem;
+    color: white;
+    position: absolute;
+    top: 33%;
+    left: 0;
+    right: 0;
+  }
+}

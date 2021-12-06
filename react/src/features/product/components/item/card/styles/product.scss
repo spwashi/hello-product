@@ -1,0 +1,32 @@
+.product-body {
+  border: 5px solid transparent;
+  box-sizing: border-box;
+
+  &:focus-within {
+    .title { text-decoration: underline }
+
+    border-color: desaturate(lighten(#c71585, 30%), 50%);
+    border-width: 2px;
+  }
+
+  &:hover {
+    border-color: desaturate(lighten(#c71585, 30%), 50%);
+    border-width: 5px;
+  }
+
+  &.active {
+    border-color: #c71585;
+    border-width: 5px;
+  }
+
+  &:focus-within, &:hover, &.active {
+    > button {
+      background: white;
+      opacity: .5;
+    }
+  }
+}
+
+
+@import "behaviors/view.card-available";
+@import "behaviors/view.button-fullsized";

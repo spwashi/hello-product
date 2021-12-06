@@ -1,0 +1,130 @@
+.detailInfoList {
+  .legendContainer {
+    width: 80%;
+    max-width: 500px;
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: column-reverse;
+
+    .legend:empty + .title {
+      display: none;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    margin-bottom: 2rem;
+  }
+
+  .legend {
+    margin: 1rem;
+    display: flex;
+    flex: 1 0 100%;
+    justify-content: space-between;
+
+    &:empty {
+      display: none;
+    }
+
+    > * {
+      display: block;
+      height: 50px;
+      width: 100%;
+
+      &[data-legendkey] {
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        > span {
+          display: none;
+        }
+
+        &:after {
+          text-align: center;
+          white-space: nowrap;
+          display: flex;
+          position: absolute;
+          height: 0;
+          line-height: 0;
+          top: 50%;
+          left: 0;
+          right: 0;
+          justify-content: center;
+          content: attr(data-legendkey) ' details';
+          @media screen and (max-width: 600px) {
+            content: attr(data-legendkey);
+          }
+        }
+      }
+    }
+  }
+}
+
+.detailInfoList.byProductRecord {
+  display: flex;
+  flex-direction: column;
+
+  .body:empty {
+    text-align: center;
+    padding: 1rem;
+
+    &:before {
+      content: 'this list is empty';
+      font-style: italic;
+      opacity: .3;
+    }
+  }
+}
+
+.detailInfoList > .head {
+  text-align: center;
+}
+
+.detailInfo.byProductRecord, .detailInfoList > .head {
+  display: grid;
+  border-top: thin solid #ccc;
+  border-bottom: thin solid #ccc;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.detailInfo, .detailInfoList {
+  &.status--expired, .legend .status--expired { background: rgba(red, .05); }
+
+  &.status--upcoming, .legend .status--upcoming { background: rgba(blue, .05); }
+
+  &.status--active, .legend .status--active { background: rgba(green, .05); }
+}
+
+.detailInfo {
+  padding: .5rem;
+
+  time {
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .record, .primaryRelatedProduct {
+    text-align: center;
+  }
+
+  .status {
+    text-align: center;
+    opacity: .5;
+  }
+
+}
+
+.detailInfoList > .head {
+  > * {
+    padding: .5rem 0;
+    font-weight: bold;
+    background: rgba(#ccc, .3);
+  }
+}

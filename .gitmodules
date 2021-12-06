@@ -1,0 +1,3 @@
+[submodule "react/wireframe"]
+	path = react/wireframe
+	url = https://github.com/spwashi/hello-product-wireframe

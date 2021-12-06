@@ -1,0 +1,78 @@
+.cardContext {
+  width: 300px;
+  display: block;
+  position: relative;
+}
+
+.cardContext .product-body {
+  > .head {
+    height: 200px;
+    background: rgba(#ccc, .3);
+    color: white;
+
+    .title {
+      padding: .5em;
+      font-size: 2rem;
+      background: rgba(#333, .7);
+    }
+  }
+}
+
+
+.infoGroup {
+  display: flex;
+  flex-direction: row;
+  padding: .5rem;
+  pointer-events: none;
+
+  &.title_rent {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(173, 216, 230, 0.35);
+
+    .title {
+      white-space: pre-wrap;
+
+      > div:first-child {
+        font-weight: 700;
+      }
+
+      > div:nth-child(2) {
+        font-weight: 300;
+        opacity: .6;
+      }
+    }
+
+    .basePrice {
+      font-weight: 500;
+    }
+  }
+
+  &.weightMetrics {
+    background: rgba(173, 216, 230, 0.15);
+    border-top: thin solid #ccc;
+    padding: 1rem .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .weight {
+      border-color: mediumvioletred;
+    }
+
+    [data-unit] {
+    }
+
+    [data-unit]:after {
+      display: block;
+      text-align: right;
+      content: attr(data-unit);
+      font-size: .75em;
+      opacity: .75;
+    }
+
+    .price-lb-month { border-color: paleturquoise;}
+
+    .price-lb-year { border-color: antiquewhite;}
+  }
+}

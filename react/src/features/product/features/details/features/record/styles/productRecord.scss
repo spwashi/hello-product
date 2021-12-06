@@ -1,0 +1,47 @@
+[data-abbreviate="true"] {
+  display: flex;
+  flex-flow: row wrap;
+
+  span[data-initial] {
+    max-width: 10px;
+    width: 10px;
+    display: inline-block;
+    overflow: visible;
+    color: transparent;
+    position: relative;
+
+    &:before {
+      content: attr(data-initial);
+      margin-left: .3em;
+      position: absolute;
+      color: black;
+      width: 10px;
+      height: 1rem;
+      z-index: 1;
+    }
+  }
+}
+
+[data-abbreviate="last"] {
+  display: flex;
+  flex-flow: row wrap;
+
+  span:last-child {
+    max-width: 10px;
+    width: 10px;
+    display: inline-block;
+    overflow: visible;
+    color: transparent;
+    position: relative;
+
+    &:before {
+      content: attr(data-initial);
+      margin-left: .3em;
+      position: absolute;
+      color: black;
+      width: 10px;
+      height: 1rem;
+      z-index: 1;
+    }
+  }
+}

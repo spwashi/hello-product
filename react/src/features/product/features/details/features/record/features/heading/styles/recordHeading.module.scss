@@ -1,0 +1,18 @@
+.recordInfoColumnHead {
+  > span {
+    display: block;
+  }
+
+  > span + span {
+    font-size: .9em;
+    opacity: .4;
+    font-weight: normal;
+    transition: opacity .3s;
+  }
+
+  &:hover {
+    > span + span {
+      opacity: .6;
+    }
+  }
+}
